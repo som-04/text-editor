@@ -1,3 +1,12 @@
+use std::io::{self, Read};
+
 fn main() {
-    println!("nothing here");
+    for b in io::stdin().bytes() {
+        let c = b.unwrap() as char;
+        if c == '.' {
+            println!("\n");
+            break;
+        }
+        print!("{}", c);
+    }
 }
